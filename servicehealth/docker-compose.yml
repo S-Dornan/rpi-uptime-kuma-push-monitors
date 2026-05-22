@@ -5,7 +5,7 @@
 services:
   uptime-kuma-general:
     # Point this to your Gitea registry URL
-    image: ghcr.io/s-dornan/pi-push-monitor-base:latest-undervoltage
+    image: ghcr.io/s-dornan/pi-push-monitor-base:latest
     container_name: uptime-kuma-online
     restart: always
     devices:
