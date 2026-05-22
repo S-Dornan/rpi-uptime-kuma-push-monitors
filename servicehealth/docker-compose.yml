@@ -1,15 +1,15 @@
 # Copyright (C) 2026 Sam Dornan
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
+# docker-compose.yml
 services:
-  uptime-kuma-push:
-    image: curlimages/curl:latest
-    container_name: uptime-kuma-push
+  uptime-kuma-general:
+    # Point this to your Gitea registry URL
+    image: gitea.samdornan.me/underperforming-software/pi-monitor:online # TODO: Replace with correct GCHR link
+    container_name: uptime-kuma-online
     restart: always
-    entrypoint: ["/bin/sh", "-c"]
-    command: 
-      - |
-        while true; do
-          curl -s -H "CF-Access-Client-Id: ${CF_CLIENT_ID}" -H "CF-Access-Client-Secret: ${CF_CLIENT_SECRET}" "${PUSH_URL}"
-          sleep ${PUSH_INTERVAL}
-        done
+    devices:
+      - /dev/vchiq:/dev/vchiq
+      - /dev/vcio:/dev/vcio
+    env_file:
+      - .env
