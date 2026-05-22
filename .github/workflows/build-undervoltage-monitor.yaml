@@ -54,7 +54,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./undervoltage # Tells Docker to look inside the undervoltage folder for the Dockerfile
           platforms: linux/arm64 # Or linux/arm/v7 if you are on 32-bit Pi OS
