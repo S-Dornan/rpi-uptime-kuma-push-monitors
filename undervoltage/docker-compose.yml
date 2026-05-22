@@ -4,7 +4,6 @@
 # docker-compose.yml
 services:
   uptime-kuma-undervoltage:
-    # Point this to your Gitea registry URL
     image: ghcr.io/s-dornan/pi-push-monitor-base:latest-undervoltage
     container_name: uptime-kuma-undervoltage
     restart: always
