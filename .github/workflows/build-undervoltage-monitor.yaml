@@ -61,6 +61,5 @@ jobs:
           push: true
           sbom: true
           provenance: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/pi-push-monitor-base:${{ steps.meta.outputs.tags }}
-            ghcr.io/${{ github.repository_owner }}/pi-push-monitor-base:${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
