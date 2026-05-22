@@ -17,7 +17,7 @@ while true; do
     curl -s -H "Connection: close" \
           -H "Alert-Powered-By: Pi-Undervoltage" \
           -H "Copyright: Copyright (c) 2026 Sam Dornan" \
-          -H "Source-Available: https://gitea.samdornan.me/Infrastructure/uptime-kuma-push-monitor" \
+          -H "Source-Available: https://github.com/S-Dornan/rpi-uptime-kuma-push-monitors" \
           -H "License-URI: https://www.gnu.org/licenses/agpl-3.0.html" \
           -H "CF-Access-Client-Id: ${CF_CLIENT_ID}" \
           -H "CF-Access-Client-Secret: ${CF_CLIENT_SECRET}" \
