@@ -23,7 +23,7 @@ jobs:
           chmod +x $RUNNER_TEMP/sbom-tool
           
           # Adjusted paths to scan the root directory instead of ./brownout
-          $RUNNER_TEMP/sbom-tool generate -b /undervoltage -bc /undervoltage -pn PiProdBase -pv 1.0.0 -ps UnderperformingSoftware -nsb https://github.com/${{ github.repository }}/sbom/pi-push-monitor-base -V Verbose
+          $RUNNER_TEMP/sbom-tool generate -b ./undervoltage -bc ./undervoltage -pn PiProdBase -pv 1.0.0 -ps S-Dornan -nsb https://github.com/${{ github.repository }}/sbom/pi-push-monitor-base -V Verbose
 
       - name: Upload SBOM Artifact
         uses: actions/upload-artifact@v7
